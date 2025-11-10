@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Grocery Calculator</title>
+</head>
+<body>
+  <h2>Simple Grocery Shop Calculator</h2>
+  <p> Open the console to see the results (Right click → Inspect → Console)</p>
+
+  <script>
+    // Create variables for item names
+    var item1 = "Rice";
+    var item2 = "Sugar";
+    var item3 = "Wheat";
+
+    // Create variables for prices (per kg)
+    var price1 = 60;
+    var price2 = 45;
+    var price3 = 55;
+
+    // Create variables for quantities purchased (in kg)
+    var qty1 = 2;
+    var qty2 = 3;
+    var qty3 = 1;
+
+    // Calculate and display cost for each item (price × quantity)
+    var cost1 = price1 * qty1;
+    var cost2 = price2 * qty2;
+    var cost3 = price3 * qty3;
+
+    console.log("Cost of " + item1 + " = ₹" + cost1);
+    console.log("Cost of " + item2 + " = ₹" + cost2);
+    console.log("Cost of " + item3 + " = ₹" + cost3);
+
+    // Calculate total bill
+    var totalBill = cost1 + cost2 + cost3;
+    console.log("Total Bill = ₹" + totalBill);
+
+    // Change the quantity of one item (for example, wheat)
+    qty3 = 3;
+
+    // Recalculate cost for wheat and total bill
+    cost3 = price3 * qty3;
+    totalBill = cost1 + cost2 + cost3;
+
+    // Display updated total
+    console.log("Updated quantity of " + item3 + " = " + qty3 + " kg");
+    console.log("Updated Total Bill = ₹" + totalBill);
+  </script>
+</body>
+</html>
