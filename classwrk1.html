@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Store Sales Calculator</title>
+</head>
+<body>
+
+  <h2>Store Sales Calculator</h2>
+
+  <script>
+    // Number of items sold
+    var tshirt_sold = 5;
+    var cap_sold = 3;
+
+    // Prices of items
+    var tshirt_price = 400;
+    var cap_price = 150;
+
+    // Calculate total earnings
+    var total_earnings = (tshirt_sold * tshirt_price) + (cap_sold * cap_price);
+    document.write("Total earnings from sales: ₹" + total_earnings + "<br>");
+
+    // Change the price of t-shirts to ₹450
+    tshirt_price = 450;
+
+    // Recalculate total earnings
+    var updated_total = (tshirt_sold * tshirt_price) + (cap_sold * cap_price);
+    document.write("Updated total earnings: ₹" + updated_total);
+  </script>
+
+</body>
+</html>
