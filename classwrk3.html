@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Feedback Cleaner</h2>
+
+<script>
+var feedback = "   I loved the FOOD and the service!   ";
+
+var cleanFeedback = feedback.trim();
+
+
+cleanFeedback = cleanFeedback.toLowerCase();
+
+cleanFeedback = cleanFeedback.replace("food", "ambience");
+
+var position = cleanFeedback.indexOf("service");
+console.log("Position of service: " + position);
+
+var feedbackArray = cleanFeedback.split(" ");
+console.log("Array of words:", feedbackArray);
+
+document.write("<h3> Cleaned Feedback</h3>");
+document.write("<b>Cleaned String:</b> " + cleanFeedback + "<br>");
+document.write("<b>Position of service:</b> " + position + "<br>");
+document.write("<b>Array of Words:</b> " + feedbackArray);
+</script>
+</body>
+</html>
