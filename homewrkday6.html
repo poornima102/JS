@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Result Dashboard</title>
+</head>
+<body>
+
+<script>
+  let students = [
+    { name: "Anu", score: 75 },
+    { name: "Biju", score: 40 },
+    { name: "Chitra", score: 95 },
+    { name: "Deepak", score: 30 },
+    { name: "Esha", score: 65 }
+  ];
+
+  
+  document.write("<h3>All Student Names</h3>");
+  for (let i = 0; i < students.length; i++) {
+    document.write(students[i].name + "<br>");
+  }
+
+  
+  function moreThan60(student) {
+    return student.score > 60;
+  }
+  function getName(student) {
+    return student.name;
+  }
+  let highScorers = students.filter(moreThan60).map(getName);
+  document.write("<h3>Students Scoring > 60</h3>");
+  document.write(highScorers.join(", ") + "<br>");
+
+  
+  let totalScore = 0;
+  for (let i = 0; i < students.length; i++) {
+    totalScore += students[i].score;
+  }
+  document.write("<h3>Total Score</h3>" + totalScore);
+
+  
+  let allPassed = true;
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score <= 35) {
+      allPassed = false;
+      break;
+    }
+  }
+  document.write("<h3>All Passed?</h3>" + allPassed);
+
+  
+  let oneAbove90 = false;
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score > 90) {
+      oneAbove90 = true;
+      break;
+    }
+  }
+  document.write("<h3>One Above 90?</h3>" + oneAbove90);
+
+  
+  for (let i = 0; i < students.length; i++) {
+    for (let j = i + 1; j < students.length; j++) {
+      if (students[i].score < students[j].score) {
+        let temp = students[i];
+        students[i] = students[j];
+        students[j] = temp;
+      }
+    }
+  }
+  document.write("<h3>Sorted Students</h3>");
+  for (let i = 0; i < students.length; i++) {
+    document.write(students[i].name + " - " + students[i].score + "<br>");
+  }
+</script>
+
+</body>
+</html>
