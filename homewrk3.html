@@ -10,8 +10,8 @@
 <script>
  
   var userProfile = {
-    username: "  CoolUser99  ",
-    bio: "  I LOVE coding! JavaScript is Great!!!  "
+    username: "  CoolUser99 . ",
+    bio:"  I LOVE coding! JavaScript is Great!!! "
   };
 
   
@@ -21,7 +21,7 @@
 
     var cleanBio = profile.bio.trim().toLowerCase();
    
-    cleanBio = cleanBio.replace(/javascript/g, "js");
+    cleanBio = cleanBio.replace("javascript", "js");
 
     var bioLength = cleanBio.length;
 
