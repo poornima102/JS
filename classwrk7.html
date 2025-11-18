@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+	friend={
+		name:"john",
+		birthDate:"1999-07-05"
+	};
+	function getBirthdayDetails(friend){
+		let birthDateObj=new Date(friend.birthDate);
+
+		let year=birthDateObj.getFullYear();
+		let day=birthDateObj.getDate();
+		let months=["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+];
+let monthName=months[birthDateObj.getMonth()];
+
+let today=new Date();
+let age=today.getFullYear()-year;
+console.log(friend.name + " was born on " + day + " "+ monthName + " , " + year + " and is " + age + " years old. ");
+	}
+getBirthdayDetails(friend);
+</script>
+</body>
+</html>
