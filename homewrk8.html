@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+  <script>
+
+let validAttempts = 0;
+
+while (validAttempts < 5) {
+    let guess = parseInt(prompt("Enter a number between 1 and 5:"));
+
+    
+    if (isNaN(guess) || guess < 1 || guess > 5) {
+        alert("Invalid input");
+        continue;   
+    }
+
+    validAttempts++;  
+
+
+    let word = "";
+    switch (guess) {
+        case 1: word = "One"; break;
+        case 2: word = "Two"; break;
+        case 3: word = "Three"; break;
+        case 4: word = "Four"; break;
+        case 5: word = "Five"; break;
+    }
+
+    alert("You entered: " + word);
+
+ 
+    if (guess === 3) {
+        alert("You guessed it right!");
+        break;  
+    } else {
+        alert("Wrong guess. Try again.");
+    }
+
+    if (validAttempts === 5) {
+        alert("Game over");
+    }
+}
+
+
+</script>
+</body>
+</html>
