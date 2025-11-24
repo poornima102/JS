@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book information</title>
+</head>
+<body>
+    <script>
+        class Book {
+  constructor(title, author, price) {
+    this.title = title;
+    this.author = author;
+    this._price = price;   
+  }
+  getTitle() {
+    return this.title;
+  }
+  getAuthor() {
+    return this.author;
+  }
+  setPrice(newPrice) {
+    if (typeof newPrice === "number" && newPrice > 0) {
+      this._price = newPrice;
+    } else {
+      console.log(" Invalid price: must be a number greater than 0.");
+    }
+  }
+  getPrice() {
+    return this._price;
+  }
+}
+const book1 = new Book("The Great fighter", "Peter john", 15);
+book1.setPrice(-20);
+book1.setPrice(20);
+
+console.log("Title:", book1.getTitle());
+console.log("Author:", book1.getAuthor());
+console.log("Price:", book1.getPrice());
+
+    </script>
+</body>
+</html>
