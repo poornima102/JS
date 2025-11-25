@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Page</title>
+  <style>
+    #displayFeedback {
+      color: black;
+      transition: color 0.2s ease;
+    }
+
+    #confirmation {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Feedback Form</h2>
+
+  <form id="feedbackForm">
+    <input type="text" id="userName" placeholder="Your Name" required /><br><br>
+    <textarea id="userFeedback" placeholder="Your Feedback" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Submitted Feedback:</h3>
+  <p id="displayName"></p>
+  <p id="displayFeedback"></p>
+  <p id="confirmation">Thanks for your feedback!</p>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+    const displayName = document.getElementById('displayName');
+    const displayFeedback = document.getElementById('displayFeedback');
+    const confirmation = document.getElementById('confirmation');
+
+    let timer;
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      const name = document.getElementById('userName').value.trim();
+      const feedback = document.getElementById('userFeedback').value.trim();
+
+      displayName.textContent = "Name: " + name;
+      displayFeedback.textContent = "Feedback: " + feedback;
+
+      confirmation.style.display = 'block';
+
+      clearTimeout(timer);
+
+      
+      timer = setTimeout(() => {
+        confirmation.style.display = 'none';
+      }, 5000);
+    });
+
+    displayFeedback.addEventListener('mouseover', function() {
+      displayFeedback.style.color = 'blue';
+    });
+
+    displayFeedback.addEventListener('mouseout', function() {
+      displayFeedback.style.color = 'black';
+    });
+  </script>
+</body>
+</html>

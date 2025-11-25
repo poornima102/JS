@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Web Page (fixed)</title>
+  <style>
+
+    #output.blue {
+      color: blue;
+      transition: color 0.15s ease;
+    }
+    #output.green {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <form id="textForm">
+    <input type="text" id="userInput" placeholder="Enter text here" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="output" class="blue" aria-live="polite"></p>
+
+  <script>
+    const form = document.getElementById('textForm');
+    const input = document.getElementById('userInput');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      const value = input.value.trim();
+      output.textContent = value || '(no text entered)';
+
+ 
+      output.classList.remove('green');
+      if (!output.classList.contains('blue')) output.classList.add('blue');
+
+      
+    });
+
+
+    output.addEventListener('mouseover', function() {
+      output.classList.remove('blue');
+      if (!output.classList.contains('green')) output.classList.add('green');
+    });
+
+   
+    output.addEventListener('mouseout', function() {
+      output.classList.remove('green');
+      if (!output.classList.contains('blue')) output.classList.add('blue');
+    });
+  </script>
+</body>
+</html>
